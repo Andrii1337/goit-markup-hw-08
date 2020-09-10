@@ -1,0 +1,52 @@
+.hero {
+	background-image: linear-gradient(rgba(47, 48, 58, 0.4) 0%, rgba(47, 48, 58, 0.4) 100%), url(../images/main/hero.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	padding-top: 118px;
+	padding-bottom: 118px;
+	@include for-size(tablet-portrait) {
+		padding-top: 118px;
+		padding-bottom: 118px;
+	}
+	@include for-size(tablet-landscape) {
+		padding-top: 118px;
+		padding-bottom: 118px;
+	}
+	@include for-size(desktop) {
+		padding-top: 200px;
+		padding-bottom: 200px;
+	}
+}
+
+.hero-title {
+	font-weight: 900;
+	font-size: 26px;
+	line-height: 1.61;
+	text-align: center;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: $white;
+	margin: 0;
+	margin-bottom: 30px;
+	@include for-size(desktop) {
+		font-size: 44px;
+		line-height: 1.363;
+	}
+}
+.hero-but {
+	display: flex;
+	justify-content: center;
+}
+.order-but {
+	background-color: $accent-color;
+	padding: 12px 20px;
+	font-size: 16px;
+	line-height: 1.875;
+	letter-spacing: 0.06em;
+	color: #ffffff;
+	font-weight: bold;
+	display: block;
+	width: 200px;
+	text-align: center;
+}

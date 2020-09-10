@@ -1,0 +1,95 @@
+.features {
+	@include for-size(tablet-landscape) {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	@include for-size(desktop) {
+		flex-wrap: nowrap;
+	}
+}
+
+.features-item {
+	width: 100%;
+	&:not(:last-child) {
+		margin-bottom: 30px;
+	}
+	@include for-size(tablet-landscape) {
+		width: calc((100% - 30px) / 2);
+		&:nth-child(2n + 1) {
+			margin: 0 30px 30px 0;
+		}
+	}
+	@include for-size(desktop) {
+		width: calc((100%-90px) / 4);
+
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+	}
+}
+
+.feature-title {
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 1.142;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	color: $title-main-color;
+	margin: 30px 0 10px 0;
+	@include for-size(tablet-landscape) {
+		text-align: left;
+	}
+	@include for-size(desktop) {
+		text-align: left;
+		font-size: 14px;
+	}
+}
+
+.antenna::before {
+	content: " ";
+	width: 100%;
+	height: 120px;
+	background-color: $bg-gray;
+	display: block;
+	background-image: url(../images/main/features/antenna.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.clock::before {
+	content: " ";
+	width: 100%;
+	height: 120px;
+	background-color: $bg-gray;
+	display: block;
+	background-image: url(../images/main/features/clock.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.diagram::before {
+	content: " ";
+	width: 100%;
+	height: 120px;
+	background-color: $bg-gray;
+	display: block;
+	background-image: url(../images/main/features/diagram.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.astronaut::before {
+	content: " ";
+	width: 100%;
+	height: 120px;
+	background-color: $bg-gray;
+	display: block;
+	background-image: url(../images/main/features/astronaut.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.feature-description {
+	font-size: 14px;
+	line-height: 1.714;
+	letter-spacing: 0.03em;
+	color: $main-color;
+	margin: 0;
+}

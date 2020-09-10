@@ -1,0 +1,32 @@
+.doing-section {
+	display: none;
+
+	@include for-size(desktop) {
+		display: grid;
+	}
+}
+.what-doing-item {
+	@include for-size(desktop) {
+		width: calc((100%-60px) / 3);
+		position: relative;
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+	}
+}
+
+.what-doing-title {
+	position: absolute;
+	color: #ffffff;
+	background-color: rgba(47, 48, 58, 0.8);
+	width: 370px;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 1.142;
+	text-align: center;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	margin: 0;
+	bottom: 0;
+	padding: 25px 0;
+}

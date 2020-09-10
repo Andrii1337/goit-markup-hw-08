@@ -1,0 +1,64 @@
+.clients-list {
+	display: flex;
+	flex-wrap: wrap;
+	@include for-size(desktop) {
+		flex-wrap: nowrap;
+	}
+}
+.clients-item {
+	@media screen and (max-width: 767px) {
+		width: calc((100% - 30px) / 2);
+		&:nth-child(2n + 1) {
+			margin-right: 30px;
+		}
+		&:nth-child(-n + 4) {
+			margin-bottom: 30px;
+		}
+	}
+	@include for-size(tablet-landscape) {
+		width: calc((100% - 60px) / 3);
+		&:not(:nth-child(3n + 3)) {
+			margin-right: 30px;
+		}
+		&:nth-child(-n + 3) {
+			margin-bottom: 30px;
+		}
+	}
+
+	@include for-size(desktop) {
+		width: calc((100% - 150px) / 6);
+
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+	}
+}
+
+.clients-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 90px;
+	border: 1px solid #afb1b8;
+	border-radius: 4px;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+	&:hover,
+	&:focus {
+		outline: none;
+		border: 1px solid#2196f3;
+		border-radius: 4px;
+	}
+}
+
+.clients-icon {
+	fill: #afb1b8;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.clients-link:hover .clients-icon,
+.clients-link:focus .clients-icon {
+	fill: $accent-color;
+}

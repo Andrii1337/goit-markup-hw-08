@@ -1,0 +1,21 @@
+.logo {
+	font-family: $second-font;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 1.166;
+	letter-spacing: 0.03em;
+	color: $title-main-color;
+	@include for-size(desktop) {
+		font-size: 26px;
+		line-height: 1.192;
+	}
+}
+.header-logo {
+	margin: 25px 93px 25px 0;
+	@include for-size(desktop) {
+		margin: 25px 93px 25px 0;
+	}
+}
+.web-logo {
+	color: $accent-color;
+}
