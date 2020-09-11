@@ -551,9 +551,13 @@ a {
 }
 
 .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  position: relative;
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    width: 100%;
+  }
 }
 
 .navigation {
@@ -562,25 +566,54 @@ a {
           align-items: center;
 }
 
-.nav-item:not(:last-child) {
-  margin-right: 50px;
+@media screen and (max-width: 767px) {
+  .navigation {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 
-.contacts-list {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-left: auto;
+@media screen and (max-width: 767px) {
+  .nav-item:not(:last-child) {
+    margin-bottom: 40px;
+  }
 }
 
-.contacts-item:not(:last-child) {
-  margin-right: 30px;
+@media (min-width: 1200px) {
+  .nav-item:not(:last-child) {
+    margin-right: 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contacts-list {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .contacts-item:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contacts-item:not(:last-child) {
+    margin-right: 30px;
+  }
 }
 
 .contacts-link {
@@ -616,14 +649,22 @@ a {
   position: relative;
 }
 
-.studio-actv:before {
-  content: " ";
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  background-color: #2196f3;
-  border-radius: 2px;
-  bottom: -31px;
+@media (min-width: 480px) {
+  .studio-actv:before {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #2196f3;
+    border-radius: 2px;
+    bottom: -8px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .studio-actv:before {
+    bottom: -32px;
+  }
 }
 
 .portfolio-actv {
@@ -632,14 +673,22 @@ a {
   position: relative;
 }
 
-.portfolio-actv:before {
-  content: " ";
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  background-color: #2196f3;
-  border-radius: 2px;
-  bottom: -31px;
+@media (min-width: 480px) {
+  .portfolio-actv:before {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #2196f3;
+    border-radius: 2px;
+    bottom: -8px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .portfolio-actv:before {
+    bottom: -32px;
+  }
 }
 
 .portfolio-header {
@@ -655,6 +704,84 @@ a {
 
 .portfolio-nav:not(:last-child) {
   margin-right: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .mobile-menu {
+    border-top: 1px solid #ececec;
+    display: none;
+  }
+  .mobile-menu.is-open {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 60px 0;
+    z-index: 999;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .contacts-list {
+    margin-top: 60px;
+    display: block;
+  }
+}
+
+.mobile-button {
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.mobile-button .burger-icon {
+  fill: #212121;
+}
+
+.mobile-button:focus .burger-icon,
+.mobile-button:hover .burger-icon {
+  fill: #2196f3;
+}
+
+.mobile-button .close-menu {
+  display: none;
+}
+
+.mobile-button.is-open .close-menu {
+  display: block;
+}
+
+.mobile-button.is-open .open-menu {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-button {
+    display: none;
+  }
 }
 
 .btn {

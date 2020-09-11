@@ -12,23 +12,43 @@
 	color: $accent-color;
 }
 .header {
-	display: flex;
+	position: relative;
+	@media screen and (max-width: 767px) {
+		width: 100%;
+	}
 }
 .navigation {
 	align-items: center;
+	@media screen and (max-width: 767px) {
+		display: flex;
+		justify-content: space-between;
+	}
 }
 .nav-item:not(:last-child) {
-	margin-right: 50px;
+	@media screen and (max-width: 767px) {
+		margin-bottom: 40px;
+	}
+
+	@include for-size(desktop) {
+		margin-right: 50px;
+	}
 }
 .contacts-list {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	margin-left: auto;
+	@include for-size(desktop) {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		margin-left: auto;
+	}
 }
 
 .contacts-item:not(:last-child) {
-	margin-right: 30px;
+	@media screen and (max-width: 767px) {
+		margin-bottom: 15px;
+	}
+	@include for-size(desktop) {
+		margin-right: 30px;
+	}
 }
 .contacts-link {
 	font-weight: 500;
@@ -56,30 +76,42 @@
 	color: $accent-color;
 	font-weight: bold;
 	position: relative;
-
-	&:before {
-		content: " ";
-		position: absolute;
-		width: 100%;
-		height: 4px;
-		background-color: $accent-color;
-		border-radius: 2px;
-		bottom: -31px;
+	@include for-size(tablet-portrait) {
+		&:before {
+			content: " ";
+			position: absolute;
+			width: 100%;
+			height: 4px;
+			background-color: $accent-color;
+			border-radius: 2px;
+			bottom: -8px;
+		}
+	}
+	@include for-size(desktop) {
+		&:before {
+			bottom: -32px;
+		}
 	}
 }
 .portfolio-actv {
 	color: $accent-color;
 	font-weight: bold;
 	position: relative;
-
-	&:before {
-		content: " ";
-		position: absolute;
-		width: 100%;
-		height: 4px;
-		background-color: $accent-color;
-		border-radius: 2px;
-		bottom: -31px;
+	@include for-size(tablet-portrait) {
+		&:before {
+			content: " ";
+			position: absolute;
+			width: 100%;
+			height: 4px;
+			background-color: $accent-color;
+			border-radius: 2px;
+			bottom: -8px;
+		}
+	}
+	@include for-size(desktop) {
+		&:before {
+			bottom: -32px;
+		}
 	}
 }
 .portfolio-header {
@@ -91,5 +123,66 @@
 
 	&:not(:last-child) {
 		margin-right: 10px;
+	}
+}
+
+.mobile-menu {
+	@media screen and (max-width: 767px) {
+		border-top: 1px solid #ececec;
+		display: none;
+
+		&.is-open {
+			display: block;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			width: 100%;
+			background-color: $white;
+			text-align: center;
+			padding: 60px 0;
+			z-index: 999;
+		}
+	}
+	@include for-size(tablet-landscape) {
+		display: flex;
+		flex-grow: 1;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+.contacts-list {
+	@media screen and (max-width: 767px) {
+		margin-top: 60px;
+		display: block;
+	}
+}
+.mobile-button {
+	width: 40px;
+	height: 40px;
+	margin: 0;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+
+	.burger-icon {
+		fill: $title-main-color;
+	}
+
+	&:focus .burger-icon,
+	&:hover .burger-icon {
+		fill: $accent-color;
+	}
+
+	.close-menu {
+		display: none;
+	}
+	&.is-open .close-menu {
+		display: block;
+	}
+	&.is-open .open-menu {
+		display: none;
+	}
+	@media screen and (min-width: 768px) {
+		display: none;
 	}
 }
