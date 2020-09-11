@@ -577,15 +577,13 @@ a {
   }
 }
 
+.nav-item:not(:last-child) {
+  margin-right: 50px;
+}
+
 @media screen and (max-width: 767px) {
   .nav-item:not(:last-child) {
     margin-bottom: 40px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .nav-item:not(:last-child) {
-    margin-right: 50px;
   }
 }
 

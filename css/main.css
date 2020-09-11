@@ -577,15 +577,13 @@ a {
   }
 }
 
+.nav-item:not(:last-child) {
+  margin-right: 50px;
+}
+
 @media screen and (max-width: 767px) {
   .nav-item:not(:last-child) {
     margin-bottom: 40px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .nav-item:not(:last-child) {
-    margin-right: 50px;
   }
 }
 
@@ -1478,19 +1476,16 @@ a {
 }
 
 .backdrop {
-  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
   width: 100%;
   height: 100%;
-  position: fixed;
   top: 0;
   left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
   -webkit-transition-duration: 250ms;
           transition-duration: 250ms;
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   overflow-y: scroll;
 }
 
@@ -1500,7 +1495,7 @@ a {
   }
 }
 
-.is-hidden {
+.backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
 }
@@ -1512,15 +1507,18 @@ a {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 528px;
-  height: 581px;
   background-color: #fff;
   padding: 40px;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (max-width: 767px) {
   .modal {
-    position: fixed;
-    width: 100%;
+    position: relative;
+    max-width: 100%;
+    background-color: #fff;
+    padding: 40px;
   }
 }
 
@@ -1565,6 +1563,7 @@ a {
   display: block;
   width: 448px;
   height: 38px;
+  width: 100%;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   padding-left: 42px;
@@ -1683,10 +1682,17 @@ a {
   position: relative;
 }
 
+@media screen and (max-width: 767px) {
+  .form-label-checkbox {
+    display: inline-block;
+  }
+}
+
 .form-label-checkbox::after {
   content: " ";
   position: absolute;
   left: 13px;
+  top: 22px;
   display: inline-block;
   width: 15px;
   height: 15px;
