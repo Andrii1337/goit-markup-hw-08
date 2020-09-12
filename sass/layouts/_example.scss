@@ -2,8 +2,6 @@
 	flex-wrap: wrap;
 }
 .example-item {
-	width: calc((100% - 60px) / 3);
-	margin-right: 30px;
 	outline: 1px solid #eeeeee;
 	display: block;
 	transition-duration: 250ms;
@@ -12,11 +10,29 @@
 	&:hover {
 		box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 	}
-	&:nth-child(-n + 6) {
-		margin-bottom: 30px;
+	@media screen and (max-width: 1199px) {
+		&:not(:last-child) {
+			margin-bottom: 30px;
+		}
 	}
-	&:nth-child(3n) {
-		margin-right: 0;
+	@include for-size(tablet-landscape) {
+		width: calc((100% - 30px) / 2);
+		&:nth-child(2n + 1) {
+			margin-right: 30px;
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	@include for-size(desktop) {
+		width: calc((100% - 60px) / 3);
+		margin-right: 30px;
+		&:nth-child(-n + 6) {
+			margin-bottom: 30px;
+		}
+		&:nth-child(3n) {
+			margin-right: 0;
+		}
 	}
 }
 
@@ -40,6 +56,9 @@
 	transform: translateY(100%);
 	transition-duration: 250ms;
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	@media screen and (max-width: 480px) {
+		padding: 5px;
+	}
 }
 .example-link:hover .overlay-description,
 .example-link:focus .overlay-description {

@@ -13,6 +13,7 @@
 }
 .header {
 	position: relative;
+	border-bottom: 1px solid #ececec;
 	@media screen and (max-width: 767px) {
 		width: 100%;
 	}
@@ -25,9 +26,11 @@
 	}
 }
 .nav-item:not(:last-child) {
-	margin-right: 50px;
 	@media screen and (max-width: 767px) {
 		margin-bottom: 40px;
+	}
+	@include for-size(tablet-landscape) {
+		margin-right: 50px;
 	}
 }
 .contacts-list {
@@ -73,18 +76,16 @@
 	color: $accent-color;
 	font-weight: bold;
 	position: relative;
-	@include for-size(tablet-portrait) {
-		&:before {
-			content: " ";
-			position: absolute;
-			width: 100%;
-			height: 4px;
-			background-color: $accent-color;
-			border-radius: 2px;
-			bottom: -8px;
-		}
+	&:before {
+		content: " ";
+		position: absolute;
+		width: 100%;
+		height: 4px;
+		background-color: $accent-color;
+		border-radius: 2px;
+		bottom: -8px;
 	}
-	@include for-size(desktop) {
+	@include for-size(tablet-landscape) {
 		&:before {
 			bottom: -32px;
 		}
@@ -94,32 +95,30 @@
 	color: $accent-color;
 	font-weight: bold;
 	position: relative;
-	@include for-size(tablet-portrait) {
-		&:before {
-			content: " ";
-			position: absolute;
-			width: 100%;
-			height: 4px;
-			background-color: $accent-color;
-			border-radius: 2px;
-			bottom: -8px;
-		}
+	&:before {
+		content: " ";
+		position: absolute;
+		width: 100%;
+		height: 4px;
+		background-color: $accent-color;
+		border-radius: 2px;
+		bottom: -8px;
 	}
-	@include for-size(desktop) {
+
+	@include for-size(tablet-landscape) {
 		&:before {
 			bottom: -32px;
 		}
 	}
 }
-.portfolio-header {
-	border-bottom: 1px solid #ececec;
-}
+
 .portfolio-nav {
 	margin-bottom: 50px;
 	justify-content: center;
-
-	&:not(:last-child) {
-		margin-right: 10px;
+	@media screen and (max-width: 767px) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: start;
 	}
 }
 
